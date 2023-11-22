@@ -1,52 +1,21 @@
-import {
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useClerk,
-} from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { Link } from "react-router-dom";
-
-function SignUpButton() {
-    const clerk = useClerk();
-  
-    return (
-      <button className="sign-up-btn" onClick={() => clerk.openSignUp({})}>
-        Sign up
-      </button>
-    );
-  }
-
-function SignInButton() {
-    const clerk = useClerk();
-  
-    return (
-      <button className="sign-in-btn" onClick={() => clerk.openSignIn({})}>
-        Sign in
-      </button>
-    );
-  }
+import AuthLayout from "./AuthLayout";
 
 const Header = () => {
   return (
     <>
       <header>
         <div className="flex justify-between">
-        <SignedOut>
-          <ul>
-            <li>
-              <SignUpButton />
-            </li>
-
-            <li>
-              <SignInButton />
-            </li>
-          </ul>
-        </SignedOut>
+          <SignedOut>
+            <AuthLayout />
+          </SignedOut>
           <SignedIn>
-            <ul className="flex items-center gap-5">
+            <ul className="w-full flex items-center justify-between gap-5">
+              <div>
               <Link to="/">Home</Link>
-              <li>About</li>
-              {/* <Link to="/products">Products</Link> */}
+              <Link to="/about">About</Link>
+              </div>
               <UserButton afterSignOutUrl="/" />
             </ul>
           </SignedIn>
