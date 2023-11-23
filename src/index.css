@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.leftsidebar {
+    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] ;
+  }

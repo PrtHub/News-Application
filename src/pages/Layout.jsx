@@ -1,26 +1,14 @@
 import { Outlet } from "react-router-dom";
-import { AuthLayout, BottomBar, Header, SideBar, TopBar } from "../components";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
+import { Header } from "../components";
+import '../App.css'
 
 const Layout = () => {
   return (
     <>
-      <SignedOut>
-        <AuthLayout />
-      </SignedOut>
-      <SignedIn>
-        <div className="w-full md:flex">
-          <section className="w-full flex justify-between items-start">
-          <SideBar />
-          <Header/>
-          </section>
-          <TopBar />
-          <section className="flex flex-1 h-full">
-            <Outlet />
-          </section>
-          {/* <BottomBar /> */}
+        <div className="w-full h-screen max-w-[1440px] mx-auto bg-black text-white">
+          <Header />
+          <Outlet />
         </div>
-      </SignedIn>
     </>
   );
 };

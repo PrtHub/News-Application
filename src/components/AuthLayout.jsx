@@ -29,7 +29,7 @@ function SignUpButton() {
 
   const AuthLayout = () => {
     return (
-      <section className="w-full  h-screen relative text-white">
+      <section className="w-full h-screen relative text-white">
       <img
         src={background}
         alt=""
