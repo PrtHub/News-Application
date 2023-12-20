@@ -11,25 +11,28 @@ import Search from "./pages/Search.jsx";
 import Save from "./pages/Save.jsx";
 import TopHeadlines from "./pages/TopHeadlines.jsx";
 import Categories from "./pages/Categories.jsx";
+import QueryProvider from "./utils/QueryProvider.jsx";
 
 const clerkPubKey = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={clerkPubKey}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<App />} />
-            <Route path="/explore" element={<Explore />} />
-            <Route path="/search/:id" element={<Search />} />
-            <Route path="/save" element={<Save />} />
-            <Route path="/top-headlines" element={<TopHeadlines/>}/>
-            <Route path="/categories" element={<Categories/>}/>
-          </Route>
-          <Route path="*" element={<NoMatch />} />
-        </Routes>
-      </BrowserRouter>
-    </ClerkProvider>
+    <QueryProvider>
+      <ClerkProvider publishableKey={clerkPubKey}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<App />} />
+              <Route path="/explore" element={<Explore />} />
+              <Route path="/search/:id" element={<Search />} />
+              <Route path="/save" element={<Save />} />
+              <Route path="/top-headlines" element={<TopHeadlines />} />
+              <Route path="/categories" element={<Categories />} />
+            </Route>
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+        </BrowserRouter>
+      </ClerkProvider>
+    </QueryProvider>
   </React.StrictMode>
 );

@@ -5,9 +5,11 @@ import '../App.css'
 const Layout = () => {
   return (
     <>
-        <div className="w-full h-screen max-w-[1440px] mx-auto bg-black text-white">
+        <div className="w-full h-screen mx-auto bg-black text-white">
           <Header />
+          <div className="w-full max-w-[1920px] mx-auto p-5">
           <Outlet />
+          </div>
         </div>
     </>
   );
