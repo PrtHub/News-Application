@@ -20,7 +20,7 @@ const Header = () => {
             {/* desktop */}
             <div className="w-full max-w-[1920px] mx-auto flex items-center lg:items-end justify-between gap-5 p-5">
               <section className="hidden lg:flex items-end gap-10">
-                <h1 className="uppercase text-4xl font-bold">Newz</h1>
+                <h1 className="text-4xl font-bold">Flash</h1>
                 <ul className="flex gap-5 items-center text-lg font-semibold">
                   <Link to="/">Home</Link>
                   <Link to="/explore">Explore</Link>
